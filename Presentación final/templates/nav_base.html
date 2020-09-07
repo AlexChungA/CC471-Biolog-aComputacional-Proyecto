@@ -1,0 +1,65 @@
+{% extends 'bootstrap/base.html' %}
+{{ fontawesome_css() }}
+{% block title %}
+{% if title %}
+{{ title }}
+{% else %}
+Biología Computacional
+{% endif %}
+{% endblock %}
+
+{% block head %}
+{% block styles %}
+{{super()}}
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('.static', filename='Style.css')}}">
+
+{% endblock %}
+{%endblock%}
+
+
+{%block body%}
+<header>
+    <div class="container-fluid p-0"></div>
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-book-reader fa-2x mx-3"></i>FACULTAD CIENCIAS-UNI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-align-right text-light"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mr-auto"></div>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">INICIO
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">ANÁLISIS</a>
+                        <div class="dropdown-content">
+                            <a href="#">Proteinas</a>
+                            <a href="#">Árbol Filogenético</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ACERCA DE</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% endblock %}
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</header>
+
+{%endblock%}
