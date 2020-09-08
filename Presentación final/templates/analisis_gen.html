@@ -2,12 +2,12 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-md-7 col-sm-12  text-white">
-            <h2>Análisis de Proteinas </h2>
+            <h2>Análisis de Gen </h2>
             <p>
                 Un alineamiento de secuencias en bioinformática es una forma de representar y comparar dos o más
                 secuencias o cadenas de ADN, ARN, o estructuras primarias proteicas para resaltar sus zonas de
-                similitud, que podrían indicar relaciones funcionales o evolutivas
-                entre los genes o proteínas consultados.
+                similitud, que podrían indicar relaciones funcionales o evolutivas entre los genes o proteínas
+                consultados.
             </p>
 
         </div>
@@ -26,27 +26,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2 class="section-heading"> Alineamiento de Secuencias </h2>
+                <h2 class="section-heading">Alineamiento de Secuencias</h2>
                 <form class="form-group" action="" method="post" name="login">
                     {{ form.hidden_tag() }}
-                    <h4>Alineamiento de Secuencias</h4>
-
                     <table class="table">
                         <tbody>
-                            <th scope="row">Selecciona la Proteina</th>
-                            <td>{{ form.protein_list(class_="custom-select-sm") }}</td>
+                            <th scope="row">Seleccione el Gen</th>
+                            <td>{{ form.gen_list(class_="custom-select-sm") }}</td>
                             <td>
-                                <button class="btn btn-warning" type=" submit">Buscar Homólogos</button>
+                                <button class="btn btn-primary" type="submit">Buscar Homólogos</button>
                             </td>
                         </tbody>
                     </table>
                     <p>
                         {% with messages = get_flashed_messages() %}
                         {% if messages %}
-                        <h4>Información de la Proteina</h4>
+                        <h4>Información del Gen</h4>
                         <ul>
                             {% for message in messages %}
-                            <!--<li>{{ message }} </li>-->
                             <li> {{ info['ID']}}</li>
                             <li style="word-break: break-all;">{{ info['Seq']}}</li>
                             {% endfor %}
@@ -60,11 +57,11 @@
 
                     <div style="margin: auto;">
                         <table class="table table-bordered">
-                            <caption>Relación de proteinas homólogas</caption>
+                            <caption>Relación de genes homólogos</caption>
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Accession</th>
-                                    <th>Descripción de la proteina</th>
+                                    <th>Descripción del gen</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,4 +79,6 @@
         </div>
     </div>
 </section>
-{%endblock %}
+
+
+{% endblock %}
