@@ -4,14 +4,10 @@
         <div class="col-md-7 col-sm-12  text-white">
             <h2>Generación del Árbol Filogenético </h2>
             <p>
-                Un árbol filogenético es un árbol que muestra las relaciones evolutivas entre varias especies u otras
-                entidades que se cree que tienen una ascendencia común. Un árbol filogenético es una forma de
-                cladograma.
+                Un árbol filogenético es un árbol que muestra las relaciones evolutivas entre varias especies u otras entidades que se cree que tienen una ascendencia común. Un árbol filogenético es una forma de cladograma.
             </p>
             <p>
-                Además, un árbol filogenético, sirve para determinar el número mínimo de divisiones necesarias para
-                obtener una célula o tejido determinado. A partir de aquí se pueden estudiar, por ejemplo, las
-                mutaciones generadas a lo largo del proceso.
+                Además, un árbol filogenético, sirve para determinar el número mínimo de divisiones necesarias para obtener una célula o tejido determinado. A partir de aquí se pueden estudiar, por ejemplo, las mutaciones generadas a lo largo del proceso.
             </p>
 
         </div>
@@ -20,12 +16,7 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-
-
-
-{%block section%}
+{% endblock %} {%block section%}
 
 <section class="features text-justify">
     <div class="container">
@@ -46,27 +37,20 @@
                     </table>
 
                     <p>
-                        {% with messages = get_flashed_messages() %}
-                        {% if messages %}
+                        {% with messages = get_flashed_messages() %} {% if messages %}
                         <h4>Información del Gen</h4>
                         <ul>
                             {% for message in messages %}
                             <li>{{ info }} </li>
                             {% endfor %}
                         </ul>
-                        {% endif %}
-                        {% endwith %}
+                        {% endif %} {% endwith %}
                     </p>
                 </form>
 
-                <h4>Grafica</h4><br>
-
-                {% if indice %}
-                <img class="mx-auto d-block" src="{{ '/static/assets/arbol_filogenetico'+ indice +'.png'}}" alt=""
-                    width="600">
-                {% else %}
-                <img class="mx-auto d-block" src="/static/assets/img_default.png" alt="img_default" width="600">
-                {% endif %}
+                <h4>Grafica</h4><br> {% if indice %}
+                <img class="mx-auto d-block" src="{{ '/static/assets/arbol_filogenetico'+ indice +'.png'}}" alt="" width="600"> {% else %}
+                <img class="mx-auto d-block" src="/static/assets/arbol_filogenetico1.png" alt="img_default" width="600"> {% endif %}
             </div>
         </div>
     </div>
