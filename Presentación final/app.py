@@ -1,6 +1,5 @@
 from flask import Flask, render_template, flash
 from flask_bootstrap import Bootstrap
-from flask_fontawesome import FontAwesome
 import formsFunc as ff
 import bioFunc as bf
 import os
@@ -8,7 +7,6 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'my_key'
 bootstrap = Bootstrap(app)
-fa = FontAwesome(app)
 
 
 @app.route("/")
